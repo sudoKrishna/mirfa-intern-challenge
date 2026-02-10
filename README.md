@@ -110,21 +110,23 @@ Input:
   "partyId": "party_123",
   "payload": { "amount": 100, "currency": "AED" }
 }
+```
 Output: encrypted record
 
-GET /tx/:id
+### GET /tx/:id
+
 Return stored encrypted record (no decrypt)
 
-POST /tx/:id/decrypt
+### POST /tx/:id/decrypt
 Return original decrypted payload
 
-Storage can be:
+### Storage can be:
 
 in-memory Map ✅ fine
 
 SQLite/Postgres ✅ bonus
 
-💻 Frontend (Next.js)
+### 💻 Frontend (Next.js)
 Single page is enough:
 
 input: partyId
@@ -141,7 +143,7 @@ show results
 
 Keep it simple and clean.
 
-🔐 Core Task — Encryption (Important)
+### 🔐 Core Task — Encryption (Important)
 Implement Envelope Encryption using AES-256-GCM.
 
 Steps
@@ -155,7 +157,7 @@ Store everything
 
 Binary values should be stored as hex strings.
 
-📦 Data Model
+### 📦 Data Model
 export type TxSecureRecord = {
   id: string
   partyId: string
@@ -172,7 +174,7 @@ export type TxSecureRecord = {
   alg: "AES-256-GCM"
   mk_version: 1
 }
-✅ Validation Rules
+#### ✅ Validation Rules
 Must reject if:
 
 nonce is not 12 bytes
@@ -187,7 +189,7 @@ tag tampered
 
 decryption fails
 
-🧪 Tests (required)
+🧪 Tests (optional)
 Write tests verifying:
 
 encrypt → decrypt works
@@ -200,7 +202,7 @@ wrong nonce length fails
 
 Minimum ~5 tests.
 
-🚀 Deployment (required)
+#### 🚀 Deployment (required)
 Deploy BOTH:
 
 Web → Vercel
@@ -209,7 +211,7 @@ API → Vercel
 
 Provide working URLs.
 
-🎥 Loom Video (very important)
+#### 🎥 Loom Video (very important)
 Record a 2–3 minute walkthrough explaining:
 
 how Turbo is configured
