@@ -111,7 +111,7 @@ export default function Page() {
       {encrypted && (
         <div style={{ marginTop: "1rem" }}>
           <h2>Encrypted Record</h2>
-          <pre style={{ background: "#f0f0f0", padding: "1rem" }}>
+          <pre style={{ background: "#f0f0f0", padding: "1rem", color : "black" }}>
             {JSON.stringify(encrypted, null, 2)}
           </pre>
         </div>
@@ -120,7 +120,7 @@ export default function Page() {
       {decrypted && (
         <div style={{ marginTop: "1rem" }}>
           <h2>Decrypted Payload</h2>
-          <pre style={{ background: "#e0ffe0", padding: "1rem" }}>
+          <pre style={{ background: "#e0ffe0", padding: "1rem" , color : "black"}}>
             {JSON.stringify(decrypted, null, 2)}
           </pre>
         </div>
